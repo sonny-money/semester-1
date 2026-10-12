@@ -13,13 +13,16 @@ for item in nums:
 
 nums.sort()
 
+if len(nums) % 2 == 1:
+    median = nums[len(nums)//2]
+else:
+    median = (nums[(len(nums)//2)] + nums[(len(nums)//2) - 1]) / 2
 
 mean = total / len(nums)
-max = max(nums)
-min = min(nums)
-median = nums[len(nums)//2]
+maximum = max(nums)
+minimum = min(nums)
 
-print(f"Minimum = {min}")
-print(f"Maximum = {max}")
+print(f"Minimum = {minimum}")
+print(f"Maximum = {maximum}")
 print(f"Mean = {mean}")
 print(f"Median = {median}")
