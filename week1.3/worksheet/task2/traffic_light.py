@@ -10,7 +10,7 @@ order = ["red", "red_amber", "green", "amber"]
 systime = 0
 timeInState = 0
 maxtime = int(input("Input max time"))  # read an integer number of steps (>0)
-
+index = 0
 state = "red"
 
 print(f"Time {systime:03} State {state}")
@@ -21,6 +21,11 @@ for i in range(0, maxtime):
     systime += 1
     timeInState += 1
     if timeInState == states[state]:
+        index = (index + 1) % len(order)
+        state = order[index]
+        timeInState = 0
+    print(f"Time {systime:03} State {state}")
+
         
 
 
