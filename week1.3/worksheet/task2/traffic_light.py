@@ -21,9 +21,9 @@ for i in range(0, maxtime):
     systime += 1
     timeInState += 1
     if timeInState == states[state]:
-        index = (index + 1) % len(order)
+        index = (index + 1) % len(order)  #ensure order wraps back around list
         state = order[index]
-        timeInState = 0
+        timeInState = 0 #reset timer
     print(f"Time {systime:03} State {state}")
 
         
