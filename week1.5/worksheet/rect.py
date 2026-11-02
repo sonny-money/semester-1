@@ -21,7 +21,7 @@ class Rectangle:
         self.width = width
         self.height = height
 
-    def isSquare(self):
+    def is_square(self):
         '''
         Returns true if shape is a square, false if otherwise
         '''

@@ -7,15 +7,18 @@ class Person:
     A Person, with a name and a date of birth.
     """
 
-    def __init__(self, name:str, birthday:date):
+    def __init__(self, name:str, birth:date):
+        '''
+        creates a person with a name, date of birth
+        '''
         if not isinstance(name,str):
             raise TypeError("Name must be a string")
         if name == "":
             raise ValueError("Name cannot be an empty string")
-        if not isinstance(birthday, date):
-            raise TypeError("Birthday must be a date object")
+        if not isinstance(birth, date):
+            raise TypeError("birth must be a date object")
         self.name = name
-        self.birthday = birthday
+        self.birth = birth
 
     def initials(self):
         '''
@@ -23,17 +26,16 @@ class Person:
         '''
 
         initial = ""
-        for char in self.name:
-            if char.isupper():
-                initial = initial + char
+        for word in self.name.split():
+            initial += word[0].upper()
         return initial
 
     def is_birthday(self):
         '''
-        Check if the persons birthday is today
+        Check if the persons birth is today
         '''
 
-        if self.birthday == date.today():
+        if self.birth == date.today():
             return True
         else:
             return False
