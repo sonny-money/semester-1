@@ -34,8 +34,9 @@ class Person:
         '''
         Check if the persons birth is today
         '''
+        today = date.today()
 
-        if self.birth == date.today():
+        if self.birth.day == today.day and self.birth.month == today.month:
             return True
         else:
             return False
