@@ -18,8 +18,8 @@ def currency_converter(amount, from_currency, to_currency):
         'INR': {'PHP': 0.69, 'CNY': 0.09, 'GBP': 0.01}
     }
 
-    if amount <= 0:
-        return 0.00
+    if amount <= 0:   #handles zero input
+        return 0.00   
     new_amount = amount * conversion_rate[from_currency][to_currency]
     return round(new_amount,2)
 

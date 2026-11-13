@@ -14,11 +14,11 @@ class Person:
         if not isinstance(name,str):
             raise TypeError("Name must be a string")
         if name == "":
-            raise ValueError("Name cannot be an empty string")
+            raise ValueError("Name cannot be an empty string") 
         if not isinstance(birth, date):
             raise TypeError("birth must be a date object")
         self.name = name
-        self.birth = birth
+        self.birth = birth   
 
     def initials(self):
         '''
@@ -26,8 +26,8 @@ class Person:
         '''
 
         initial = ""
-        for word in self.name.split():
-            initial += word[0].upper()
+        for word in self.name.split(): #splits name into multiple substrings
+            initial += word[0].upper()  #converts first letter of each substring to uppercase
         return initial
 
     def is_birthday(self):
@@ -36,8 +36,8 @@ class Person:
         '''
         today = date.today()
 
-        if self.birth.day == today.day and self.birth.month == today.month:
-            return True
+        if self.birth.day == today.day and self.birth.month == today.month: 
+            return True #checks if birthday is equa to todays date, not year
         else:
             return False
 
