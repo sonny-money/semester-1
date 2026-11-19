@@ -38,14 +38,14 @@ print(temp_data)
 df = pd.DataFrame(temp_data)
 
 # using matplotlib plot the 3 data sets: (tempmin,temp,tempmax) as line graphs
-
-df.plot()
-
-plt.show()
-
+temperature_columns = ['tempmin', 'temp', 'tempmax']
+df[temperature_columns] = (df[temperature_columns] - 32) / 1.8
+df.plot(y=temperature_columns)
 # annotate the graph with axis labels
-
-# note that temperature is in Farenheit (F)
-# convert to Celcius before plotting 
+plt.xlabel("Day")
+plt.ylabel("Temperature (°C)")
 
 # using the documentation explore other data, eg. rainfall  
+
+
+plt.show()
